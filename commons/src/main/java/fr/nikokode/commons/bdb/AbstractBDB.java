@@ -6,11 +6,11 @@ package fr.nikokode.commons.bdb;
 import java.io.File;
 import java.io.FileFilter;
 
-import org.apache.log4j.Logger;
-
 import com.sleepycat.je.DatabaseException;
 import com.sleepycat.je.Environment;
 import com.sleepycat.je.EnvironmentConfig;
+
+import fr.nikokode.commons.log.Log4jLogger;
 
 /**
  * Abstract Berkeley DB storage.
@@ -33,8 +33,6 @@ public abstract class AbstractBDB {
         }
 
     }
-
-    public static final Logger LOGGER = Logger.getLogger(AbstractBDB.class);
 
     /**
      * The Berkeley DB JE environment.
@@ -62,9 +60,7 @@ public abstract class AbstractBDB {
             dbEnvironment.close();
             dbEnvironment = null;
         }
-        if (LOGGER.isInfoEnabled()) {
-            LOGGER.info("Closed BDB located in '" + getStorageFolderPath() + "'");
-        }
+        Log4jLogger.info(this, "Closed BDB located in '" + getStorageFolderPath() + "'");
     }
 
     /**
@@ -99,10 +95,8 @@ public abstract class AbstractBDB {
 
         initStores(dbEnvironment);
 
-        if (LOGGER.isInfoEnabled()) {
-            LOGGER.info("Initialised BDB located in '" + getStorageFolderPath() + "'"
-                    + (createEnv ? " (created new environment)" : ""));
-        }
+        Log4jLogger.info(this, "Initialised BDB located in '" + getStorageFolderPath()
+                + "'" + (createEnv ? " (created new environment)" : ""));
     }
 
     /**

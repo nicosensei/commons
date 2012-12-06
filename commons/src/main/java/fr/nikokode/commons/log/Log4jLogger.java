@@ -23,7 +23,17 @@ public class Log4jLogger {
      * @param message the message to log
      */
     public static final void log(Level level, Object sender, Object message) {
-        Logger l = Logger.getLogger(sender.getClass());
+        log(level, sender.getClass(), message);
+    }
+
+    /**
+     * Guard-logs a message from a sender object, with a given priority.
+     * @param level the message level
+     * @param senderClass the sender object's class
+     * @param message the message to log
+     */
+    public static final void log(Level level, Class<?> senderClass, Object message) {
+        Logger l = Logger.getLogger(senderClass);
         if (l.isEnabledFor(level)) {
             l.log(level, message);
         }
@@ -39,6 +49,15 @@ public class Log4jLogger {
     }
 
     /**
+     * Guard-logs a debug message.
+     * @param senderClass the sender object's class
+     * @param message the message to log
+     */
+    public static final void debug(Class<?> senderClass, Object message) {
+        log(Level.DEBUG, senderClass, message);
+    }
+
+    /**
      * Guard-logs an information message.
      * @param sender the sender object
      * @param message the message to log
@@ -48,12 +67,12 @@ public class Log4jLogger {
     }
 
     /**
-     * Guard-logs a fatal message.
-     * @param sender the sender object
+     * Guard-logs an information message.
+     * @param senderClass the sender object's class
      * @param message the message to log
      */
-    public static final void fatal(Object sender, Object message) {
-        log(Level.FATAL, sender, message);
+    public static final void info(Class<?> senderClass, Object message) {
+        log(Level.INFO, senderClass, message);
     }
 
     /**
@@ -64,8 +83,39 @@ public class Log4jLogger {
      * localized message is used instead).
      */
     public static final void error(Object sender, Throwable t, Object message) {
-        Logger l = Logger.getLogger(sender.getClass());
+        error(sender.getClass(), t, message);
+    }
+
+    /**
+     * Logs an error.
+     * @param t the error
+     * @param senderClass the sender object's class
+     * @param message the message to log (if null the error's
+     * localized message is used instead).
+     */
+    public static final void error(Class<?> senderClass, Throwable t, Object message) {
+        Logger l = Logger.getLogger(senderClass);
         l.error((message == null ? t.getLocalizedMessage() : message), t);
+    }
+
+    /**
+     * Logs an error.
+     * @param t the error
+     * @param sender the sender object
+     * @param message the message to log (if null the error's
+     * localized message is used instead).
+     */
+    public static final void error(Object sender, Throwable t) {
+        error(sender.getClass(), t, t.getLocalizedMessage());
+    }
+
+    /**
+     * Logs an error.
+     * @param t the error
+     * @param senderClass the sender object's class
+     */
+    public static final void error(Class<?> senderClass, Throwable t) {
+        error(senderClass, t, t.getLocalizedMessage());
     }
 
 }

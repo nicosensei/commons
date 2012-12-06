@@ -13,7 +13,7 @@ package fr.nikokode.commons.exceptions;
  * @author ngiraud
  *
  */
-public abstract class Unexpected extends RuntimeException {
+public class Unexpected extends RuntimeException {
 
     /**
      * Serialization UID.
