@@ -6,6 +6,8 @@ package fr.nikokode.commons.xml;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -20,6 +22,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -79,9 +82,33 @@ public class XmlDomUtils {
         }
     }
 
-    public static Element getChildElementByName(Element root, String tagName) {
-        NodeList nl = root.getElementsByTagName(tagName);
-        return (nl.getLength() == 0 ? null : (Element) nl.item(0));
+    public static Element getFirstChildElementByName(Element root, String tagName) {
+        NodeList nl = root.getChildNodes();
+        for (int i = 0; i < nl.getLength(); i++) {
+            Node child = nl.item(i);
+            if (child.getNodeType() != Node.ELEMENT_NODE) {
+                continue;
+            }
+            if (tagName.equals(child.getNodeName())) {
+                return (Element) child;
+            }
+        }
+        return null;
+    }
+
+    public static List<Element> getChildElementsByName(Element root, String tagName) {
+        List<Element> tags = new LinkedList<Element>();
+        NodeList nl = root.getChildNodes();
+        for (int i = 0; i < nl.getLength(); i++) {
+            Node child = nl.item(i);
+            if (child.getNodeType() != Node.ELEMENT_NODE) {
+                continue;
+            }
+            if (tagName.equals(child.getNodeName())) {
+                tags.add((Element) child);
+            }
+        }
+        return tags;
     }
 
 }
