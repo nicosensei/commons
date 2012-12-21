@@ -21,14 +21,17 @@ package fr.nikokode.commons.reflection;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import org.apache.log4j.Logger;
+
 import fr.nikokode.commons.exceptions.Unexpected;
-import fr.nikokode.commons.log.Log4jLogger;
 
 /**
  * @author ngiraud
  *
  */
 public class ReflectionUtils {
+
+    private final static Logger LOGGER = Logger.getLogger(ReflectionUtils.class);
 
     public static final Object newInstance(
             String className,
@@ -39,28 +42,28 @@ public class ReflectionUtils {
             Constructor<?> ctr = objectClass.getDeclaredConstructor(ctrParamTypes);
             return ctr.newInstance(ctrParamValues);
         } catch (ClassNotFoundException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (SecurityException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (NoSuchMethodException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (NumberFormatException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (IllegalArgumentException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (InstantiationException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (IllegalAccessException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (InvocationTargetException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         }
     }
@@ -69,22 +72,22 @@ public class ReflectionUtils {
         try {
             return Class.forName(className).newInstance();
         } catch (ClassNotFoundException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (SecurityException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (NumberFormatException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (IllegalArgumentException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (InstantiationException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         } catch (IllegalAccessException e) {
-            Log4jLogger.error(ReflectionUtils.class, e);
+            LOGGER.error(ReflectionUtils.class, e);
             throw new Unexpected(e);
         }
     }

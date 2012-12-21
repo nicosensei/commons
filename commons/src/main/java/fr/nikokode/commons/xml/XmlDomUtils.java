@@ -35,19 +35,20 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import fr.nikokode.commons.log.Log4jLogger;
-
 /**
  * @author ngiraud
  *
  */
 public class XmlDomUtils {
+
+    private final static Logger LOGGER = Logger.getLogger(XmlDomUtils.class);
 
     public static Element loadXmlFile(String filePath) throws IOException {
         return loadXmlFile(new File(filePath));
@@ -86,13 +87,13 @@ public class XmlDomUtils {
 
             return eltStr;
         } catch (final TransformerConfigurationException e) {
-            Log4jLogger.error(XmlDomUtils.class, e);
+            LOGGER.error(XmlDomUtils.class, e);
             return e.getMessage();
         } catch (final TransformerException e) {
-            Log4jLogger.error(XmlDomUtils.class, e);
+            LOGGER.error(XmlDomUtils.class, e);
             return e.getMessage();
         } catch (final IOException e) {
-            Log4jLogger.error(XmlDomUtils.class, e);
+            LOGGER.error(XmlDomUtils.class, e);
             return e.getMessage();
         }
     }
