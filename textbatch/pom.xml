@@ -11,5 +11,14 @@
 	<artifactId>text-batch</artifactId>
 	<version>1.0.0</version>
 	<description>Common framework for large text files processing tools.</description>
+        
+        <repositories>
+            <repository>
+                <id>github-nicosensei-releases</id>
+                <name>Snapshot Java packages from nicosensei's GitHub repo</name>
+                <url>https://github.com/nicosensei/maven-repo/master/releases</url>
+                <layout>default</layout>
+            </repository>
+        </repositories>
 
 </project>
