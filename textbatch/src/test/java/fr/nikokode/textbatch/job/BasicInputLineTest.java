@@ -1,7 +1,7 @@
 /**
  *
  */
-package bnf.dlweb.tools.job;
+package fr.nikokode.textbatch.job;
 
 import fr.nikokode.textbatch.job.BasicInputLine;
 import junit.framework.TestCase;
