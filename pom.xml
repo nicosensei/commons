@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>fr.nikokode</groupId>
+    <artifactId>maven-master</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>commons</artifactId>
+  <version>1.1.0</version>
+  <name>Common utilities</name>
+  <description>A few common utility classes than can be used in various Java dev projects</description>
+  <dependencies>
+    <dependency>
+      <groupId>com.sleepycat</groupId>
+      <artifactId>je</artifactId>
+      <version>5.0.58</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>oracleReleases</id>
+      <name>Oracle Released Java Packages</name>
+      <url>http://download.oracle.com/maven</url>
+      <layout>default</layout>
+    </repository>
+    <repository>
+      <id>github-nicosensei-releases</id>
+      <name>Snapshot Java packages from nicosensei's GitHub repo</name>
+      <url>https://github.com/nicosensei/maven-repo/master/releases</url>
+      <layout>default</layout>
+    </repository>
+    <repository>
+      <id>github-nicosensei-snapshots</id>
+      <name>Snapshot Java packages from nicosensei's GitHub repo</name>
+      <url>https://github.com/nicosensei/maven-repo/master/snapshots</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+
+</project>

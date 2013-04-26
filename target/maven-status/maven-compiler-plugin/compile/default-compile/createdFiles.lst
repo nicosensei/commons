@@ -1,0 +1,9 @@
+fr/nikokode/commons/time/TimeUtils.class
+fr/nikokode/commons/bdb/AbstractBDB$1.class
+fr/nikokode/commons/reflection/ReflectionUtils.class
+fr/nikokode/commons/bdb/AbstractBDB$BDBFileFilter.class
+fr/nikokode/commons/xml/XmlDomUtils.class
+fr/nikokode/commons/bdb/AbstractBDB.class
+fr/nikokode/commons/exceptions/Handleable.class
+fr/nikokode/commons/exceptions/Unexpected.class
+fr/nikokode/commons/url/ParsedUrl.class
