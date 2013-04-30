@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301 USA
  */
-package fr.nikokode.commons.time;
+package fr.nikokode.commons.formatter;
 
 /**
  * Helper methods related to time.
@@ -24,7 +24,7 @@ package fr.nikokode.commons.time;
  * @author ngiraud
  *
  */
-public class TimeUtils {
+public class TimeFormatter {
 
     public final static String formatDuration(long lMs) {
         // Validate
