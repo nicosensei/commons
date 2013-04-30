@@ -1,4 +1,4 @@
-package fr.nikokode.commons.formatter;
+package fr.nikokode.commons.utils.datatype;
 
 /**
  * Handles the formatting of byte size data.
