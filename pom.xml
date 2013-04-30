@@ -25,18 +25,6 @@
       <url>http://download.oracle.com/maven</url>
       <layout>default</layout>
     </repository>
-    <repository>
-      <id>github-nicosensei-releases</id>
-      <name>Snapshot Java packages from nicosensei's GitHub repo</name>
-      <url>https://github.com/nicosensei/maven-repo/master/releases</url>
-      <layout>default</layout>
-    </repository>
-    <repository>
-      <id>github-nicosensei-snapshots</id>
-      <name>Snapshot Java packages from nicosensei's GitHub repo</name>
-      <url>https://github.com/nicosensei/maven-repo/master/snapshots</url>
-      <layout>default</layout>
-    </repository>
   </repositories>
 
 </project>
