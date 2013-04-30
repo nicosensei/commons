@@ -6,7 +6,7 @@ package fr.nikokode.commons.formatter;
  * @author ngiraud
  *
  */
-public class ByteSizeFormatter {
+public class ByteCountFormatter {
 
     /**
      * Outputs a human readable byte size.
@@ -14,6 +14,8 @@ public class ByteSizeFormatter {
      * @param bytes the byte size
      * @param si use SI units if true, binary units otherwise
      * @return a human readable string
+     *
+     * @see http://stackoverflow.com/a/3758880 (original source code)
      */
     public static String humanReadableByteCount(long bytes, boolean si) {
         int unit = si ? 1000 : 1024;
