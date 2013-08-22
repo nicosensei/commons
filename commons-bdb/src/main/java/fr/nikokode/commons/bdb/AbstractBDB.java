@@ -57,12 +57,12 @@ public abstract class AbstractBDB {
     /**
      * @return the path to the storage folder.
      */
-    protected abstract String getStorageFolderPath();
+    public abstract String getStorageFolderPath();
 
     /**
      * @return the percentage of JVM memory to use for the cache.
      */
-    protected abstract int getCachePercentage();
+    public abstract int getCachePercentage();
 
     /**
      * The class logger
