@@ -17,9 +17,10 @@
     <description>A few common utility classes than can be used in various Java dev projects</description>
 
 	<modules>
-        <module>commons-util</module>
-		<module>commons-cmd</module>
-		<module>commons-bdb</module>
+            <module>commons-util</module>
+	    <module>commons-cmd</module>
+	    <module>commons-bdb</module>
+            <module>commons-dao</module>
 	</modules>
 	
 	<licenses>
