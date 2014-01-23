@@ -530,5 +530,17 @@ public abstract class GenericDao {
 		long l = rs.getLong(columnName);
 		return rs.wasNull() ? null : l;
 	}
+	
+	/**
+	 * Extracts a long from the result set, preserving null values.
+	 * @param rs the result set
+	 * @param columnName the column name
+	 * @return a {@link Long} instance or null if the value is null in the result set
+	 * @throws SQLException if the extraction failed (column name not present)
+	 */
+	protected Integer getIntegerKeepNull(ResultSet rs, String columnName) throws SQLException {
+		int l = rs.getInt(columnName);
+		return rs.wasNull() ? null : l;
+	}
 
 }
