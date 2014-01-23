@@ -24,6 +24,8 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.TransactionStatus;
 
+import dk.netarkivet.harvester.dao.ParameterMap;
+
 /**
  * Base abstract class for generic DAOs. 
  * 
@@ -467,6 +469,32 @@ public abstract class GenericDao {
 	 */
 	protected int executeUpdate(final String sql) {
 		return executeUpdate(sql, ParameterMap.EMPTY);
+	}
+	
+	/**
+	 * Executes a DB update.
+	 * @param paramSql the parameterized SQL request
+	 * @param paramMap the map of parameters and values
+	 * @param genKeyHolder a mutable map that will contain generated keys.
+	 * @return the update count
+	 */
+	protected int executeUpdateGetGeneratedKeys(
+			final String paramSql, 
+			final ParameterMap paramMap,
+			Map<String, Object> genKeyHolder) {
+		if (log.isTraceEnabled()) {
+			log.trace("[DB UPDATE] " + paramSql + " " + paramMap);
+		}		
+		GeneratedKeyHolder keys = new GeneratedKeyHolder();
+		int updateCount =  template.update(
+				paramSql, 
+				new MapSqlParameterSource(paramMap), 
+				keys);
+		
+		genKeyHolder.clear();
+		genKeyHolder.putAll(keys.getKeys());		
+		
+		return updateCount;
 	}
 	
 	/** 
