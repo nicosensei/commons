@@ -24,8 +24,6 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.TransactionStatus;
 
-import dk.netarkivet.harvester.dao.ParameterMap;
-
 /**
  * Base abstract class for generic DAOs. 
  * 
