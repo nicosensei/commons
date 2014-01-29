@@ -19,7 +19,9 @@
 package com.github.nicosensei.commons.xml;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.LinkedList;
 import java.util.List;
@@ -50,11 +52,15 @@ public class XmlDomUtils {
 
     private final static Logger LOGGER = Logger.getLogger(XmlDomUtils.class);
 
-    public static Element loadXmlFile(String filePath) throws IOException {
-        return loadXmlFile(new File(filePath));
+    public static Element loadXml(String filePath) throws IOException {
+        return loadXml(new FileInputStream(filePath));
     }
 
-    public static Element loadXmlFile(File filePath) throws IOException {
+    public static Element loadXmlFile(File file) throws IOException {
+    	return loadXml(new FileInputStream(file));
+    }
+    
+    public static Element loadXml(final InputStream inStream) throws IOException {
         DocumentBuilderFactory factory =
             DocumentBuilderFactory.newInstance();
         factory.setValidating(false);
@@ -62,7 +68,7 @@ public class XmlDomUtils {
 
         Document doc;
         try {
-            doc = factory.newDocumentBuilder().parse(filePath);
+            doc = factory.newDocumentBuilder().parse(inStream);
         } catch (SAXException e) {
             throw new IOException(e.getLocalizedMessage(), e);
         } catch (ParserConfigurationException e) {
