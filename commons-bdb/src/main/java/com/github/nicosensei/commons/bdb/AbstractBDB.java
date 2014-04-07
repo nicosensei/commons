@@ -21,7 +21,8 @@ package com.github.nicosensei.commons.bdb;
 import java.io.File;
 import java.io.FileFilter;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.sleepycat.je.DatabaseException;
 import com.sleepycat.je.Environment;
@@ -67,7 +68,7 @@ public abstract class AbstractBDB {
     /**
      * The class logger
      */
-    private final static Logger LOGGER = Logger.getLogger(AbstractBDB.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(AbstractBDB.class);
 
     /**
      * Closes the BDB.
