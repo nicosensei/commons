@@ -6,7 +6,7 @@
 		<version>1.5.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>commons-bdb</artifactId>
-  <version>1.5.3</version>
+  <version>1.5.4-SNAPSHOT</version>
 	<name>Commons: BerkeleyDB</name>
 	<description>BerkeleyDB JE utilities</description>
 	<dependencies>

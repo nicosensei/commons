@@ -6,7 +6,7 @@
 		<version>1.5.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>commons-util</artifactId>
-  <version>1.5.3</version>
+        <version>1.5.4-SNAPSHOT</version>
 	<name>Commons: core utilities</name>
 	<description>A few common utility classes than can be used in various Java dev projects</description>
 

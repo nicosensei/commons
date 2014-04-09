@@ -6,7 +6,7 @@
 		<version>1.5.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>commons-cmd</artifactId>
-  <version>1.5.3</version>
+        <version>1.5.4-SNAPSHOT</version>
 	<name>Commons: command line utilities</name>
 	<description>Command line parsing utilities</description>
 	<dependencies>

@@ -6,7 +6,7 @@
 		<version>1.5.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>commons-dao</artifactId>
-  <version>1.5.3</version>
+        <version>1.5.4-SNAPSHOT</version>
 	<name>Commons: DAO utilities</name>
 	<description>A simple abstract DAO backed by a Spring JDBC NamedParameterJdbcTemplate. It handles transactions and error logging transparently.</description>
 
